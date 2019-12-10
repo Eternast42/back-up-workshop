@@ -3,14 +3,12 @@
     src: url("./fonts/Adam.otf");
    }
 
+body {
+    overflow: hidden;
+}
 
 .enter {
-    position: absolute;
-    width: 1423px;
-    height: 158px;
-    left: calc(50% - 1423px/2 + 1.5px);
-    top: calc(50% - 158px/2 + 407px);
-    
+    width: 1423px;    
     font-family: "adam";
     font-size: 150px;
     line-height: 176px;
@@ -19,47 +17,48 @@
     transition: 0.3s transform;
     
     color: #FFFFFF;
-    
     text-shadow: 4px 5px 4px rgba(0, 0, 0, 0.5);
 }
 
 .enter:hover {
-    transform:  scale(1.2);
+    transform: scale(1.2);
     cursor: pointer;
 }
 
-.section {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
-    background: #E0DDDD;
+.background {
+    width: 100%;
+    display: flex;
+    background: #1f1e1e;
 }
 
  #img1 {
-    position: absolute;
     width: 50%;
-    height: 971px;
-    left: 0;
-    top: 27px;
-    background: url(./files/image1.png);
+    height: 100vh;
+    background: url(./files/realImage1.png);
+    background-repeat: no-repeat;
+    background-position-x: 75%; 
+    background-size: auto 100%;
  }
 
  #img2 {
-    position: absolute;
     width: 50%;
-    height: 971px;
-    right: 0;
-    top: 27px;
-    background: url(./files/image2.png);
+    height: 100vh;
+    background: url(./files/realImage2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
  }
 
  #logo {
-    position: absolute;
     width: 316px;
     height: 132px;
-    left: 562px;
-    top: calc(50% - 132px/2 + 206px);
-    
+    margin-bottom: 50px;
+ }
+
+ .entry {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: calc(50% - 1423px/2 + 1.5px);
+    bottom: 0;
  }
