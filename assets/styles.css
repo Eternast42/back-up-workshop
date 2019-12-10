@@ -1,0 +1,65 @@
+@font-face {
+    font-family:"adam";
+    src: url("./fonts/Adam.otf");
+   }
+
+
+.enter {
+    position: absolute;
+    width: 1423px;
+    height: 158px;
+    left: calc(50% - 1423px/2 + 1.5px);
+    top: calc(50% - 158px/2 + 407px);
+    
+    font-family: "adam";
+    font-size: 150px;
+    line-height: 176px;
+    text-align: center;
+    letter-spacing: 5.35714px;
+    transition: 0.3s transform;
+    
+    color: #FFFFFF;
+    
+    text-shadow: 4px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.enter:hover {
+    transform:  scale(1.2);
+    cursor: pointer;
+}
+
+.section {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+    background: #E0DDDD;
+}
+
+ #img1 {
+    position: absolute;
+    width: 50%;
+    height: 971px;
+    left: 0;
+    top: 27px;
+    background: url(./files/image1.png);
+ }
+
+ #img2 {
+    position: absolute;
+    width: 50%;
+    height: 971px;
+    right: 0;
+    top: 27px;
+    background: url(./files/image2.png);
+ }
+
+ #logo {
+    position: absolute;
+    width: 316px;
+    height: 132px;
+    left: 562px;
+    top: calc(50% - 132px/2 + 206px);
+    
+ }
