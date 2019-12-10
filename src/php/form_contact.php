@@ -2,7 +2,6 @@
         $name = $_POST['name'];
         $mail = $_POST['mail'];
         $message = $_POST['message'];
-        $mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
 
         $mailTo = "thomas.tilly@eemi.com";
         $headers = "From: ".$mail;
