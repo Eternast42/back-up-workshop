@@ -1,6 +1,6 @@
 <?php
 
-    $bdd = new PDO('mysql:host=;dbname=members', 'avanpraet', 'q0BcXUSD6a');
+    $bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
 
     if(isset($_POST['formregister'])) {
         $name = htmlspecialchars($_POST['name']);
@@ -13,14 +13,14 @@
             if($namelenght <= 30) {
                 if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                     if($mail == $mail2) {
-                        $mailreq = $bdd->prepare('SELECT * FROM members WHERE mail = ?');
+                        $mailreq = $bdd->prepare('SELECT * FROM membres WHERE mail = ?');
                         $mailreq->execute(array($mail));
                         $mailexist = $mailreq->rowCount();
                         if ($mailexist == 0) {
                             if($psw == $psw2) {
-                                $insertmbr = $bdd->prepare('INSERT INTO members(name, mail, psw) VALUES (?, ?, ?)');
+                                $insertmbr = $bdd->prepare('INSERT INTO membres(name, mail, psw) VALUES (?, ?, ?)');
                                 $insertmbr->execute(array($name, $mail, $psw));
-                                $valid = "You are know registered.";
+                                $valid = "You are know registered. <a href=\"connection.php\">Connect here !</a>";
                             } else {
                                 $error = "Password doesn't match.";
                             }
@@ -104,14 +104,12 @@
                 </table>
             </form>
             <?php
-
                 if(isset($error)) {
                     echo('<font color="red">'.$error.'</font>');
                 }
                 if (isset($valid)) {
                     echo('<font color="green">'.$valid.'</font>');
                 }
-
             ?>
         </div>
     </body>
