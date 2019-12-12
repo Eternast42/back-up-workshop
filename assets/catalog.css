@@ -1,3 +1,4 @@
+
 @font-face {
     font-family:"adam";
     src: url("../assets/fonts/Adam.otf");
@@ -49,28 +50,30 @@ header nav button a {
     text-decoration: none;
 }
 
-.section-presentation {
-    margin-top: 50px;
-    width: 100%;
+#indexPage {
+    margin-top: 25px;
+}
+.row {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+  }
 
-.text-presentation {
-    height: 356px;
-    text-align: left;
-    flex-direction: column;
-    color: #F2F2F2;
-    font-family: "adam";
-}
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    transition: 0.3s transform;
+  }
 
-.text-presentation h3 {
-    font-size: 70px;
-}
-
-.text-presentation p {
-    margin-top: 156px;
-    font-size: 22px;
-    font-weight: 600;
-}
+  .column img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
