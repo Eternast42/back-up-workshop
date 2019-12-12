@@ -16,7 +16,7 @@ body {
     letter-spacing: 5.35714px;
     transition: 0.3s transform;
     
-    color: #FFFFFF;
+    color: #F2F2F2;
     text-shadow: 4px 5px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -25,6 +25,10 @@ body {
     cursor: pointer;
 }
 
+.enter a {
+    text-decoration: none;
+    color: inherit;
+}
 .background {
     width: 100%;
     display: flex;

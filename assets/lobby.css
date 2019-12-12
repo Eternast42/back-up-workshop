@@ -1,0 +1,71 @@
+@font-face {
+    font-family:"adam";
+    src: url("../assets/fonts/Adam.otf");
+   }
+   
+body {
+    background-color: #9C9C9C;
+}
+
+header {
+    height: 175px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+header div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+}
+
+header nav {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header nav button {
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 600;
+    color: #F2F2F2;
+    background: none;
+    font-family: "adam";
+    transition: 0.3s transform;
+}
+
+header nav button:hover {
+    transform: scale(1.1);
+}
+
+.section-presentation {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.text-presentation {
+    height: 356px;
+    text-align: left;
+    flex-direction: column;
+    color: #F2F2F2;
+    font-family: "adam";
+}
+
+.text-presentation h3 {
+    font-size: 70px;
+}
+
+.text-presentation p {
+    margin-top: 156px;
+    font-size: 22px;
+    font-weight: 600;
+}
