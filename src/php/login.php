@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    $bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
+    $bdd = new PDO('mysql:host=locahost;dbname=avanpraet;charset=UTF-8', 'avanpraet', 'qOBcXUSD6a');
+    //$bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
 
     if(isset($_POST['formconnect'])) {
         $mailconnect = htmlspecialchars($_POST['mailconnect']);
@@ -16,7 +17,7 @@
                 $_SESSION['id'] = $userinfo['id'];
                 $_SESSION['name'] = $userinfo['name'];
                 $_SESSION['mail'] = $userinfo['mail'];
-                header("Location: profil.php?id=".$_SESSION['id']);
+                header("Location: profile.php?id=".$_SESSION['id']);
             } else {
                 $error = "Wrong Mail or Password.";
             }
@@ -33,12 +34,14 @@
     </head>
     <body>
         <div align="center">
-            <h2>Connection :</h2>
+            <h2>Login :</h2>
             <br /><br />
             <form method="POST" action="">
                 <input type="email" name="mailconnect" placeholder="Mail" />
                 <input type="password" name="pswconnect" placeholder="Password" /><br /><br />
                 <input type="submit" name="formconnect" value="Connect here !" />
+                <p> or </p>
+                <a href="register.php">Register here</a>
             </form>
             <?php
 

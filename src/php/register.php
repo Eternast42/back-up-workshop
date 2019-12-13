@@ -1,6 +1,7 @@
 <?php
 
-    $bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
+    $bdd = new PDO('mysql:host=locahost;dbname=avanpraet;charset=UTF-8', 'avanpraet', 'qOBcXUSD6a');
+    //$bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
 
     if(isset($_POST['formregister'])) {
         $name = htmlspecialchars($_POST['name']);
@@ -20,7 +21,7 @@
                             if($psw == $psw2) {
                                 $insertmbr = $bdd->prepare('INSERT INTO membres(name, mail, psw) VALUES (?, ?, ?)');
                                 $insertmbr->execute(array($name, $mail, $psw));
-                                $valid = "You are know registered. <a href=\"connection.php\">Connect here !</a>";
+                                $valid = "You are know registered. <a href=\"login.php\">Connect here !</a>";
                             } else {
                                 $error = "Password doesn't match.";
                             }

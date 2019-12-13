@@ -1,7 +1,8 @@
 <?php
     session_start();
 
-    $bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
+    $bdd = new PDO('mysql:host=locahost;dbname=avanpraet;charset=UTF-8', 'avanpraet', 'qOBcXUSD6a');
+    //$bdd = new PDO('mysql:host=localhost;dbname=tuto', 'root', '');
 
     if(isset($_SESSION['id'])) {
         $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
@@ -11,13 +12,13 @@
             $newname = htmlspecialchars($_POST['newname']);
             $insertname = $bdd->prepare("UPDATE membres SET name = ? WHERE id = ?");
             $insertname->execute(array($newname, $_SESSION['id']));
-            header('Location: profil.php?id='.$_SESSION['id']);
+            header('Location: profile.php?id='.$_SESSION['id']);
         }
         if(isset($_POST['newmail']) && !empty($_POST['newmail']) && $_POST['newmail'] != $user['mail']) {
             $newmail = htmlspecialchars($_POST['newmail']);
             $insertmail = $bdd->prepare("UPDATE membres SET mail = ? WHERE id = ?");
             $insertmail->execute(array($newmail, $_SESSION['id']));
-            header('Location: profil.php?id='.$_SESSION['id']);
+            header('Location: profile.php?id='.$_SESSION['id']);
         }
         if(isset($_POST['newpsw1']) && !empty($_POST['newpsw1']) && isset($_POST['newpsw2']) && !empty($_POST['newpsw2'])) {
             $psw1 = sha1($_POST['newpsw1']);
@@ -25,13 +26,13 @@
             if($psw1 == $psw2) {
                 $insertpsw = $bdd->prepare("UPDATE membres SET psw = ? WHERE id = ?");
                 $insertpsw->execute(array($psw1, $_SESSION['id']));
-                header('Location: profil.php?id='.$_SESSION['id']);
+                header('Location: profile.php?id='.$_SESSION['id']);
             } else {
                 $error = "Password doesn't match.";
             }
         }
         if(isset($_POST['newname']) && $_POST['newname'] == $user['name']) {
-            header('Location: profil.php?id='.$_SESSION['id']);
+            header('Location: profile.php?id='.$_SESSION['id']);
         }
 ?>
 
@@ -95,6 +96,6 @@
 </html>
 <?php
     } else {
-        header("Location: connection.php");
+        header("Location: login.php");
     }
 ?>
